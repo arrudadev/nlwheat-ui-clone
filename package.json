@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "lint-staged"
+    "lint": "lint-staged",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "11.1.2",
@@ -27,6 +28,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.2",
     "lint-staged": "^11.2.3",
     "prettier": "^2.4.1",
     "typescript": "^4.4.4"
