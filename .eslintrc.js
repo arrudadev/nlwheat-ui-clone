@@ -8,6 +8,7 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
     'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -23,6 +24,7 @@ module.exports = {
     'import',
     'import-helpers',
     'react-hooks',
+    'prettier',
   ],
   rules: {
     'class-methods-use-this': 'off',
@@ -72,5 +74,6 @@ module.exports = {
     'no-restricted-properties': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
+    'prettier/prettier': 'error',
   },
 };
