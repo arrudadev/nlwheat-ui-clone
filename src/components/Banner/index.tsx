@@ -1,3 +1,4 @@
+import { SubscriptionForm } from '../SubscriptionForm';
 import {
   Container,
   Content,
@@ -54,7 +55,7 @@ export function Banner() {
         </Content>
 
         <Subscription>
-          <h1>Inscrição gratuita</h1>
+          <SubscriptionForm />
         </Subscription>
       </Container>
     </Section>
