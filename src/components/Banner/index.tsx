@@ -1,5 +1,8 @@
 import { SubscriptionForm } from '../SubscriptionForm';
 import {
+  BinaryIcon01,
+  BinaryIcon02,
+  BinaryIcon03,
   Container,
   Content,
   Detail,
@@ -56,6 +59,12 @@ export function Banner() {
 
         <Subscription>
           <SubscriptionForm />
+
+          <BinaryIcon01 src="/icons/home/binary01.svg" />
+
+          <BinaryIcon02 src="/icons/home/binary02.svg" />
+
+          <BinaryIcon03 src="/icons/home/binary03.svg" />
         </Subscription>
       </Container>
     </Section>

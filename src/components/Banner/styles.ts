@@ -223,3 +223,45 @@ export const Subscription = styled.div`
     max-width: 480px;
   }
 `;
+
+export const BinaryIcon01 = styled.img`
+  position: absolute;
+  top: 95px;
+  left: -49px;
+
+  @media (min-width: 320px) {
+    display: none;
+  }
+
+  @media (min-width: 992px) {
+    display: flex;
+  }
+`;
+
+export const BinaryIcon02 = styled.img`
+  position: absolute;
+  top: -109px;
+  right: -33px;
+
+  @media (min-width: 320px) {
+    display: none;
+  }
+
+  @media (min-width: 992px) {
+    display: flex;
+  }
+`;
+
+export const BinaryIcon03 = styled.img`
+  position: absolute;
+  bottom: 38px;
+  right: -16px;
+
+  @media (min-width: 320px) {
+    display: none;
+  }
+
+  @media (min-width: 992px) {
+    display: flex;
+  }
+`;
