@@ -17,7 +17,7 @@ import {
   Title,
 } from './styles';
 
-export function Banner() {
+export function BannerSection() {
   return (
     <Section>
       <Container>

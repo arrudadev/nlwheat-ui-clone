@@ -1,5 +1,5 @@
-import { Banner } from '../components/Banner';
+import { BannerSection } from '../components/BannerSection';
 
 export default function Home() {
-  return <Banner />;
+  return <BannerSection />;
 }
