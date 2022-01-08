@@ -1,4 +1,5 @@
 import { BannerSection } from '../components/BannerSection';
+import { MethodSection } from '../components/MethodSection';
 import { MissionContentSection } from '../components/MissionContentSection';
 
 export default function Home() {
@@ -7,6 +8,8 @@ export default function Home() {
       <BannerSection />
 
       <MissionContentSection />
+
+      <MethodSection />
     </main>
   );
 }
