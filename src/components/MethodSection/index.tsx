@@ -1,6 +1,7 @@
 import ComputerIcon from '../../assets/icons/computer.svg';
 import FocusIcon from '../../assets/icons/focus.svg';
 import GroupIcon from '../../assets/icons/group.svg';
+import { Divider } from '../Divider';
 import { MethodCard } from '../MethodCard';
 import { Pillars } from '../Pillars';
 import { Cards, Container, Section, Title } from './styles';
@@ -33,6 +34,8 @@ export function MethodSection() {
 
         <Pillars />
       </Container>
+
+      <Divider />
     </Section>
   );
 }

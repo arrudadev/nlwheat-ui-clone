@@ -4,6 +4,7 @@ import CellphoneIcon from '../../assets/icons/cellphone.svg';
 import CodeIcon from '../../assets/icons/code.svg';
 import NetworkingIcon from '../../assets/icons/networking.svg';
 import { Button } from '../Button';
+import { Divider } from '../Divider';
 import { MissionContentCard } from '../MissionContentCard';
 import {
   ButtonContainer,
@@ -63,6 +64,8 @@ export function MissionContentSection() {
           />
         </CardsArea>
       </Container>
+
+      <Divider />
     </Section>
   );
 }

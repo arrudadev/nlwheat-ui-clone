@@ -1,3 +1,4 @@
+import { Divider } from '../Divider';
 import { SubscriptionForm } from '../SubscriptionForm';
 import {
   BinaryIcon01,
@@ -67,6 +68,8 @@ export function BannerSection() {
           <BinaryIcon03 src="/icons/home/binary03.svg" />
         </Subscription>
       </Container>
+
+      <Divider />
     </Section>
   );
 }

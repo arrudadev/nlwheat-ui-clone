@@ -1,4 +1,5 @@
 import PlayVideoIcon from '../../assets/icons/play-video.svg';
+import { Divider } from '../Divider';
 import {
   Button,
   Buttons,
@@ -94,6 +95,8 @@ export function EditionsSection() {
           </VideoWrapper>
         </Content>
       </Container>
+
+      <Divider />
     </Section>
   );
 }
