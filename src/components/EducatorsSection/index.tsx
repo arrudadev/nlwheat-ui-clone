@@ -1,3 +1,4 @@
+import { Divider } from '../Divider';
 import {
   Container,
   EducatorCard,
@@ -166,6 +167,8 @@ export function EducatorsSection() {
           </EducatorCard>
         </EducatorsList>
       </Container>
+
+      <Divider />
     </Section>
   );
 }

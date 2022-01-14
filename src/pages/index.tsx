@@ -3,6 +3,7 @@ import { EditionsSection } from '../components/EditionsSection';
 import { EducatorsSection } from '../components/EducatorsSection';
 import { MethodSection } from '../components/MethodSection';
 import { MissionContentSection } from '../components/MissionContentSection';
+import { SubscriptionSection } from '../components/SubscriptionSection';
 
 export default function Home() {
   return (
@@ -16,6 +17,8 @@ export default function Home() {
       <EditionsSection />
 
       <EducatorsSection />
+
+      <SubscriptionSection />
     </main>
   );
 }
