@@ -4,6 +4,7 @@ import { EducatorsSection } from '../components/EducatorsSection';
 import { MethodSection } from '../components/MethodSection';
 import { MissionContentSection } from '../components/MissionContentSection';
 import { SubscriptionSection } from '../components/SubscriptionSection';
+import { TestimonialsSection } from '../components/TestimonialsSection';
 
 export default function Home() {
   return (
@@ -19,6 +20,8 @@ export default function Home() {
       <EducatorsSection />
 
       <SubscriptionSection />
+
+      <TestimonialsSection />
     </main>
   );
 }
