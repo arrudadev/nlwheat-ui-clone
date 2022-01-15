@@ -1,3 +1,4 @@
+import { AboutSection } from '../components/AboutSection';
 import { BannerSection } from '../components/BannerSection';
 import { EditionsSection } from '../components/EditionsSection';
 import { EducatorsSection } from '../components/EducatorsSection';
@@ -22,6 +23,7 @@ export default function Home() {
       <SubscriptionSection />
 
       <TestimonialsSection />
+      <AboutSection />
     </main>
   );
 }
