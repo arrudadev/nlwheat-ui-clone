@@ -7,6 +7,7 @@ import {
   Divider,
   Footer,
   Form,
+  QuestionIcon,
   Title,
 } from './styles';
 
@@ -38,6 +39,8 @@ export function SubscriptionForm() {
             value="marketing"
           />
         </CheckboxContainer>
+
+        <QuestionIcon data-tip="Evento online e 100% gratuito que reúne toda a comunidade dev para um propósito: Construir o futuro através da programação. Keynotes, palestras, talks, painéis e diversos workshops com profissionais do mercado para você se conectar, evoluir e fazer parte dessa construção." />
       </CheckboxWrapper>
 
       <Button>Quero embarcar na missão</Button>

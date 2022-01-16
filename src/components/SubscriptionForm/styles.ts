@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import QuestionSVG from '../../assets/icons/question.svg';
+
 export const Title = styled.span`
   width: 100%;
   font-size: 32px;
@@ -34,6 +36,10 @@ export const CheckboxWrapper = styled.div`
   position: relative;
   margin: 20px 0;
 
+  div + div {
+    margin-top: 16px;
+  }
+
   @media (min-width: 320px) {
     margin: 16px 0;
   }
@@ -46,6 +52,31 @@ export const CheckboxWrapper = styled.div`
 export const CheckboxContainer = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const QuestionIcon = styled(QuestionSVG)`
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  top: 28px;
+  left: 164px;
+
+  cursor: pointer;
+
+  @media (min-width: 576px) {
+    top: 2px;
+    left: 438px;
+  }
+
+  @media (min-width: 992px) {
+    top: 28px;
+    left: 164px;
+  }
+
+  @media (min-width: 1200px) {
+    left: 66px;
+  }
 `;
 
 export const Divider = styled.hr`
