@@ -211,7 +211,7 @@ export const EducatorPhotoWrapper = styled.div`
 
   @media (min-width: 768px) {
     position: absolute;
-    top: 64px;
+    top: -64px;
 
     width: 180px;
     height: 180px;
