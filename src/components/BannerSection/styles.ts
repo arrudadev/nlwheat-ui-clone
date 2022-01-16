@@ -5,7 +5,6 @@ export const Section = styled.section`
   justify-content: center;
 
   position: relative;
-  height: 100vh;
 
   background-position: top;
   background-repeat: no-repeat;
