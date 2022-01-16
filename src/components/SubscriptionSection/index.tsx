@@ -1,3 +1,5 @@
+import { Element } from 'react-scroll';
+
 import { SubscriptionForm } from '../SubscriptionForm';
 import {
   CalendarIcon,
@@ -17,45 +19,47 @@ import {
 
 export function SubscriptionSection() {
   return (
-    <Section>
-      <Container>
-        <Content>
-          <Logos>
-            <NlwIcon /> <span>+</span> <DoWhileIcon />
-          </Logos>
+    <Element name="subscription">
+      <Section>
+        <Container>
+          <Content>
+            <Logos>
+              <NlwIcon /> <span>+</span> <DoWhileIcon />
+            </Logos>
 
-          <Title>
-            Programação na <br /> prática, para quem <br /> busca evolução
-          </Title>
+            <Title>
+              Programação na <br /> prática, para quem <br /> busca evolução
+            </Title>
 
-          <SubTitle>
-            Faça parte dessa missão e descubra ferramentas, conceitos e hacks
-            que vão impulsionar sua carreira em programação.
-          </SubTitle>
+            <SubTitle>
+              Faça parte dessa missão e descubra ferramentas, conceitos e hacks
+              que vão impulsionar sua carreira em programação.
+            </SubTitle>
 
-          <Details>
-            <Detail>
-              <CalendarIcon />
+            <Details>
+              <Detail>
+                <CalendarIcon />
 
-              <span>
-                18 a 24 <br /> de outubro
-              </span>
-            </Detail>
+                <span>
+                  18 a 24 <br /> de outubro
+                </span>
+              </Detail>
 
-            <Detail>
-              <OnlineIcon />
+              <Detail>
+                <OnlineIcon />
 
-              <span>
-                Online <br /> e gratuito
-              </span>
-            </Detail>
-          </Details>
-        </Content>
+                <span>
+                  Online <br /> e gratuito
+                </span>
+              </Detail>
+            </Details>
+          </Content>
 
-        <Subscription>
-          <SubscriptionForm />
-        </Subscription>
-      </Container>
-    </Section>
+          <Subscription>
+            <SubscriptionForm />
+          </Subscription>
+        </Container>
+      </Section>
+    </Element>
   );
 }

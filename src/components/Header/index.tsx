@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-scroll';
 
 import {
   Container,
@@ -38,7 +39,9 @@ export function Header() {
         <LogoIcon />
 
         <Content>
-          <JoinMissionButton>{joinMissionButtonText}</JoinMissionButton>
+          <Link to="subscription" spy smooth>
+            <JoinMissionButton>{joinMissionButtonText}</JoinMissionButton>
+          </Link>
         </Content>
       </Container>
     </StyledHeader>

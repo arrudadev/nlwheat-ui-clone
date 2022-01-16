@@ -1,3 +1,5 @@
+import { Link } from 'react-scroll';
+
 import AwardsIcon from '../../assets/icons/awards.svg';
 import BackpackIcon from '../../assets/icons/backpack.svg';
 import CellphoneIcon from '../../assets/icons/cellphone.svg';
@@ -27,7 +29,9 @@ export function MissionContentSection() {
             </StickyAreaTitle>
 
             <ButtonContainer>
-              <Button>Embarcar Agora</Button>
+              <Link to="subscription" spy smooth>
+                <Button>Embarcar Agora</Button>
+              </Link>
             </ButtonContainer>
           </StickyContainer>
         </StickyArea>
