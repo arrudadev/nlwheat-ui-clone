@@ -10,6 +10,7 @@ import {
 
 export function Header() {
   const [show, setShow] = useState(false);
+  const [joinMissionButtonText, setJoinMissionButtonText] = useState('');
 
   function handleScroll() {
     const scrollPosition = window.scrollY;
@@ -20,6 +21,15 @@ export function Header() {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
+
+    const currentWidth = window.innerWidth;
+    const mediumWidth = 576;
+
+    if (currentWidth < mediumWidth) {
+      setJoinMissionButtonText('Inscreva-se');
+    } else {
+      setJoinMissionButtonText('Quero Embarcar Na Missão');
+    }
   }, []);
 
   return (
@@ -28,7 +38,7 @@ export function Header() {
         <LogoIcon />
 
         <Content>
-          <JoinMissionButton>Quero Embarcar Na Missão</JoinMissionButton>
+          <JoinMissionButton>{joinMissionButtonText}</JoinMissionButton>
         </Content>
       </Container>
     </StyledHeader>
