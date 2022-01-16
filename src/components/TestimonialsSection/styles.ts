@@ -53,20 +53,8 @@ export const StyledSwiper = styled(Swiper)`
     max-height: 630px;
   }
 
-  @media (min-width: 768px) {
-    max-height: 530px;
-  }
-
-  @media (min-width: 992px) {
+  @media (min-width: 1200px) {
     max-height: 420px;
-  }
-`;
-
-export const StyledSwiperSlide = styled(SwiperSlide)`
-  padding-bottom: 64px;
-
-  @media (min-width: 992px) {
-    height: 100%;
   }
 `;
 

@@ -27,9 +27,22 @@ export function TestimonialsSection() {
         <StyledSwiper
           modules={[Pagination, Autoplay]}
           pagination={{ clickable: true }}
-          autoplay
-          slidesPerView={3}
+          // autoplay
           spaceBetween={50}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+              direction: 'vertical',
+            },
+            576: {
+              slidesPerView: 2,
+              direction: 'vertical',
+            },
+            1200: {
+              slidesPerView: 3,
+              direction: 'horizontal',
+            },
+          }}
           style={{
             // eslint-disable-next-line
             // @ts-ignore
