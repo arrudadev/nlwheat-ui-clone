@@ -1,3 +1,5 @@
+import { animateScroll as scroll } from 'react-scroll';
+
 import {
   BoostingPeopleIcon,
   Container,
@@ -15,6 +17,10 @@ import {
 } from './styles';
 
 export function Footer() {
+  function handleScrollToTop() {
+    scroll.scrollToTop();
+  }
+
   return (
     <StyledFooter>
       <Container>
@@ -77,7 +83,7 @@ export function Footer() {
         <Down>
           <RocketseatIcon />
 
-          <GoToTopButton>
+          <GoToTopButton onClick={handleScrollToTop}>
             <ArrowUpIcon />
           </GoToTopButton>
         </Down>
