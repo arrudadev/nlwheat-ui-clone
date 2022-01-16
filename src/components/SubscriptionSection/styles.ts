@@ -34,7 +34,7 @@ export const Container = styled.div`
 
     width: 100%;
 
-    margin: 0 24px;
+    margin: unset;
   }
 
   @media (min-width: 992px) {
@@ -42,6 +42,8 @@ export const Container = styled.div`
     flex-direction: row;
 
     width: 1120px;
+
+    margin: 0 24px;
   }
 
   @media (min-width: 1200px) {
