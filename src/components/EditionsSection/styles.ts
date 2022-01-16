@@ -109,6 +109,30 @@ export const Buttons = styled.div`
     flex-direction: column;
   }
 `;
+export const ButtonsMobile = styled.div`
+  display: none;
+
+  @media (min-width: 320px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    width: 100%;
+
+    margin-bottom: 18px;
+
+    border: 1px solid var(--shape-hover);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  @media (min-width: 375px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @media (min-width: 992px) {
+    display: none;
+  }
+`;
 
 export const ButtonWrapper = styled.div`
   position: relative;
@@ -164,6 +188,20 @@ export const ButtonWrapper = styled.div`
   }
 `;
 
+export const ButtonWrapperMobile = styled.div`
+  position: relative;
+
+  border-left: 1px solid var(--shape-hover);
+
+  &.active {
+    background: linear-gradient(180deg, #11251c 3.75%, rgba(18, 18, 20, 0));
+
+    strong {
+      color: var(--white);
+    }
+  }
+`;
+
 export const Button = styled.button`
   display: flex;
   align-items: center;
@@ -201,6 +239,25 @@ export const Button = styled.button`
     color: var(--text);
 
     margin-left: 16px;
+  }
+`;
+
+export const ButtonMobile = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 40px;
+
+  font-size: 15px;
+  line-height: 20px;
+
+  border: 0;
+  background: transparent;
+
+  strong {
+    color: var(--text);
   }
 `;
 
@@ -276,7 +333,6 @@ export const ThumbnailWrapper = styled.div`
 
 export const Thumbnail = styled.img`
   display: block;
-  /* position: absolute; */
   visibility: visible;
 
   inset: 0px;
@@ -287,9 +343,6 @@ export const Thumbnail = styled.img`
 
   padding: 0px;
   margin: auto;
-
-  /* width: 0px;
-  height: 0px; */
 
   min-width: 100%;
   max-width: 100%;

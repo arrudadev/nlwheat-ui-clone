@@ -2,8 +2,11 @@ import PlayVideoIcon from '../../assets/icons/play-video.svg';
 import { Divider } from '../Divider';
 import {
   Button,
+  ButtonMobile,
   Buttons,
+  ButtonsMobile,
   ButtonWrapper,
+  ButtonWrapperMobile,
   Container,
   Content,
   Header,
@@ -80,6 +83,44 @@ export function EditionsSection() {
               </Button>
             </ButtonWrapper>
           </Buttons>
+
+          <ButtonsMobile>
+            <ButtonWrapperMobile className="active">
+              <ButtonMobile>
+                <strong>#01</strong>
+              </ButtonMobile>
+            </ButtonWrapperMobile>
+
+            <ButtonWrapperMobile>
+              <ButtonMobile>
+                <strong>#02</strong>
+              </ButtonMobile>
+            </ButtonWrapperMobile>
+
+            <ButtonWrapperMobile>
+              <ButtonMobile>
+                <strong>#03</strong>
+              </ButtonMobile>
+            </ButtonWrapperMobile>
+
+            <ButtonWrapperMobile>
+              <ButtonMobile>
+                <strong>#04</strong>
+              </ButtonMobile>
+            </ButtonWrapperMobile>
+
+            <ButtonWrapperMobile>
+              <ButtonMobile>
+                <strong>#05</strong>
+              </ButtonMobile>
+            </ButtonWrapperMobile>
+
+            <ButtonWrapperMobile>
+              <ButtonMobile>
+                <strong>#06</strong>
+              </ButtonMobile>
+            </ButtonWrapperMobile>
+          </ButtonsMobile>
 
           <VideoWrapper>
             <PlayVideoButton>
