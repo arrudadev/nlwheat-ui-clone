@@ -76,5 +76,6 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 'off',
     'prettier/prettier': 'error',
     'react/require-default-props': 'off',
+    'react/jsx-no-bind': 'off',
   },
 };
