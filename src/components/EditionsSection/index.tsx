@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import PlayVideoIcon from '../../assets/icons/play-video.svg';
 import { Divider } from '../Divider';
 import {
@@ -20,6 +22,16 @@ import {
 } from './styles';
 
 export function EditionsSection() {
+  const [selectedEdition, setSelectedEdition] = useState('6');
+
+  function isActive(edition: string) {
+    return selectedEdition === edition;
+  }
+
+  function handleSelectEdition(edition: string) {
+    setSelectedEdition(edition);
+  }
+
   return (
     <Section>
       <Container>
@@ -35,48 +47,48 @@ export function EditionsSection() {
 
         <Content>
           <Buttons>
-            <ButtonWrapper className="active">
-              <Button>
+            <ButtonWrapper className={isActive('1') ? 'active' : ''}>
+              <Button onClick={() => handleSelectEdition('1')}>
                 <span>Edição</span>
 
                 <strong>#01</strong>
               </Button>
             </ButtonWrapper>
 
-            <ButtonWrapper>
-              <Button>
+            <ButtonWrapper className={isActive('2') ? 'active' : ''}>
+              <Button onClick={() => handleSelectEdition('2')}>
                 <span>Edição</span>
 
                 <strong>#02</strong>
               </Button>
             </ButtonWrapper>
 
-            <ButtonWrapper>
-              <Button>
+            <ButtonWrapper className={isActive('3') ? 'active' : ''}>
+              <Button onClick={() => handleSelectEdition('3')}>
                 <span>Edição</span>
 
                 <strong>#03</strong>
               </Button>
             </ButtonWrapper>
 
-            <ButtonWrapper>
-              <Button>
+            <ButtonWrapper className={isActive('4') ? 'active' : ''}>
+              <Button onClick={() => handleSelectEdition('4')}>
                 <span>Edição</span>
 
                 <strong>#04</strong>
               </Button>
             </ButtonWrapper>
 
-            <ButtonWrapper>
-              <Button>
+            <ButtonWrapper className={isActive('5') ? 'active' : ''}>
+              <Button onClick={() => handleSelectEdition('5')}>
                 <span>Edição</span>
 
                 <strong>#05</strong>
               </Button>
             </ButtonWrapper>
 
-            <ButtonWrapper>
-              <Button>
+            <ButtonWrapper className={isActive('6') ? 'active' : ''}>
+              <Button onClick={() => handleSelectEdition('6')}>
                 <span>Edição</span>
 
                 <strong>#06</strong>
@@ -85,38 +97,38 @@ export function EditionsSection() {
           </Buttons>
 
           <ButtonsMobile>
-            <ButtonWrapperMobile className="active">
-              <ButtonMobile>
+            <ButtonWrapperMobile className={isActive('1') ? 'active' : ''}>
+              <ButtonMobile onClick={() => handleSelectEdition('1')}>
                 <strong>#01</strong>
               </ButtonMobile>
             </ButtonWrapperMobile>
 
-            <ButtonWrapperMobile>
-              <ButtonMobile>
+            <ButtonWrapperMobile className={isActive('2') ? 'active' : ''}>
+              <ButtonMobile onClick={() => handleSelectEdition('2')}>
                 <strong>#02</strong>
               </ButtonMobile>
             </ButtonWrapperMobile>
 
-            <ButtonWrapperMobile>
-              <ButtonMobile>
+            <ButtonWrapperMobile className={isActive('3') ? 'active' : ''}>
+              <ButtonMobile onClick={() => handleSelectEdition('3')}>
                 <strong>#03</strong>
               </ButtonMobile>
             </ButtonWrapperMobile>
 
-            <ButtonWrapperMobile>
-              <ButtonMobile>
+            <ButtonWrapperMobile className={isActive('4') ? 'active' : ''}>
+              <ButtonMobile onClick={() => handleSelectEdition('4')}>
                 <strong>#04</strong>
               </ButtonMobile>
             </ButtonWrapperMobile>
 
-            <ButtonWrapperMobile>
-              <ButtonMobile>
+            <ButtonWrapperMobile className={isActive('5') ? 'active' : ''}>
+              <ButtonMobile onClick={() => handleSelectEdition('5')}>
                 <strong>#05</strong>
               </ButtonMobile>
             </ButtonWrapperMobile>
 
-            <ButtonWrapperMobile>
-              <ButtonMobile>
+            <ButtonWrapperMobile className={isActive('6') ? 'active' : ''}>
+              <ButtonMobile onClick={() => handleSelectEdition('6')}>
                 <strong>#06</strong>
               </ButtonMobile>
             </ButtonWrapperMobile>
@@ -128,8 +140,8 @@ export function EditionsSection() {
 
               <ThumbnailWrapper>
                 <Thumbnail
-                  alt="Next Level Week 1"
-                  src="/images/thumbnails/nlw1.png"
+                  alt={`Next Level Week ${selectedEdition}`}
+                  src={`/images/thumbnails/nlw${selectedEdition}.png`}
                 />
               </ThumbnailWrapper>
             </PlayVideoButton>
