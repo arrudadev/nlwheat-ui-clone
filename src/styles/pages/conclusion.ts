@@ -18,6 +18,10 @@ type TicketProps = {
   isMobile?: boolean;
 };
 
+type InviteLinkButtonProps = {
+  isMobile?: boolean;
+};
+
 export const Main = styled.main`
   background-position: 50%;
   background-repeat: no-repeat;
@@ -536,7 +540,7 @@ export const TicketGithubUsername = styled.span`
   }
 `;
 
-export const InviteLinkButton = styled.button`
+export const InviteLinkButton = styled.button<InviteLinkButtonProps>`
   align-items: center;
 
   font-size: 14px;
@@ -563,11 +567,15 @@ export const InviteLinkButton = styled.button`
   }
 
   @media (min-width: 320px) {
-    display: none;
+    display: ${({ isMobile }) => (isMobile ? 'flex' : 'none')};
+
+    padding: 16px 13px 16px 16px;
+
+    margin-top: 32px;
   }
 
   @media (min-width: 768px) {
-    display: flex;
+    display: ${({ isMobile }) => (isMobile ? 'none' : 'flex')};
 
     padding: 16px;
   }
@@ -580,6 +588,13 @@ export const InviteLinkButtonContent = styled.div`
   align-items: center;
 
   margin-left: 16px;
+
+  @media (min-width: 320px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    text-align: left;
+  }
 
   strong {
     font-weight: 400;
