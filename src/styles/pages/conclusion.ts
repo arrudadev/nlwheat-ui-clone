@@ -22,6 +22,10 @@ type InviteLinkButtonProps = {
   isMobile?: boolean;
 };
 
+type ShareYourTicketProps = {
+  isMobile?: boolean;
+};
+
 export const Main = styled.main`
   background-position: 50%;
   background-repeat: no-repeat;
@@ -637,7 +641,7 @@ export const InviteLinkButtonContent = styled.div`
   }
 `;
 
-export const ShareYourTicket = styled.div`
+export const ShareYourTicket = styled.div<ShareYourTicketProps>`
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -645,11 +649,13 @@ export const ShareYourTicket = styled.div`
   margin-top: 24px;
 
   @media (min-width: 320px) {
-    display: none;
+    display: ${({ isMobile }) => (isMobile ? 'flex' : 'none')};
+    align-items: flex-start;
   }
 
   @media (min-width: 768px) {
-    display: flex;
+    display: ${({ isMobile }) => (isMobile ? 'none' : 'flex')};
+    align-items: center;
   }
 
   span {

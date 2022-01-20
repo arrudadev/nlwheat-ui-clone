@@ -96,6 +96,36 @@ export default function Conclusion() {
                 </InviteLinkButtonContent>
               </InviteLinkButton>
 
+              <ShareYourTicket isMobile>
+                <span>Compartilhe seu Ticket:</span>
+
+                <OptionsToShareList>
+                  <OptionToShare>
+                    <ShareLinkButton>
+                      <ShareLinkImg src="/icons/whatsapp.png" alt="Whatsapp" />
+                    </ShareLinkButton>
+                  </OptionToShare>
+
+                  <OptionToShare>
+                    <ShareLinkButton>
+                      <ShareLinkImg src="/icons/linkedin.png" alt="Linkedin" />
+                    </ShareLinkButton>
+                  </OptionToShare>
+
+                  <OptionToShare>
+                    <ShareLinkButton>
+                      <ShareLinkImg src="/icons/facebook.png" alt="Facebook" />
+                    </ShareLinkButton>
+                  </OptionToShare>
+
+                  <OptionToShare>
+                    <ShareLinkButton>
+                      <ShareLinkImg src="/icons/twitter.png" alt="Twitter" />
+                    </ShareLinkButton>
+                  </OptionToShare>
+                </OptionsToShareList>
+              </ShareYourTicket>
+
               <SubTitle>
                 <strong>Importante:</strong> Siga os passos abaixo para estar
                 100% preparado(a) para o evento.
