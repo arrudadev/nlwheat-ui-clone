@@ -28,8 +28,10 @@ import {
   Ticket,
   TicketArea,
   TicketBackgroundIcon,
+  TicketBackgroundMobileIcon,
   TicketDate,
   TicketDoWhileIcon,
+  TicketDoWhileMobileIcon,
   TicketGithubIcon,
   TicketGithubUsername,
   TicketPersonGithub,
@@ -59,6 +61,30 @@ export default function Conclusion() {
               </TicketReserved>
 
               <Title>Conclua sua inscrição</Title>
+
+              <Ticket isMobile>
+                <TicketBackgroundMobileIcon />
+
+                <TicketDoWhileMobileIcon />
+
+                <TicketDate>
+                  18 a 24 <br /> de outubro
+                </TicketDate>
+
+                <TicketProfile>
+                  <TicketPersonIcon />
+
+                  <TicketPersonInfo>
+                    <TicketPersonName>Seu nome</TicketPersonName>
+
+                    <TicketPersonGithub>
+                      <TicketGithubIcon />
+
+                      <TicketGithubUsername>Username</TicketGithubUsername>
+                    </TicketPersonGithub>
+                  </TicketPersonInfo>
+                </TicketProfile>
+              </Ticket>
 
               <SubTitle>
                 <strong>Importante:</strong> Siga os passos abaixo para estar

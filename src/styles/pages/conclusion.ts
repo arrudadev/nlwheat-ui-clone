@@ -6,11 +6,17 @@ import CustomTicketGithubSuccessfullySVG from '../../assets/icons/custom-ticket-
 import CustomizeTicketGithubSVG from '../../assets/icons/customize-ticket-github.svg';
 import DiscordSVG from '../../assets/icons/discord.svg';
 import StepDoWhileSVG from '../../assets/icons/step-do-while.svg';
+import TicketBackgroundMobileSVG from '../../assets/icons/ticket-background-mobile.svg';
 import TicketBackgroundSVG from '../../assets/icons/ticket-background.svg';
+import TicketDoWhileMobileSVG from '../../assets/icons/ticket-do-while-mobile.svg';
 import TicketDoWhileSVG from '../../assets/icons/ticket-do-while.svg';
 import TicketGithubSVG from '../../assets/icons/ticket-github.svg';
 import TicketPersonSVG from '../../assets/icons/ticket-person.svg';
 import TicketReservedSVG from '../../assets/icons/ticket-reserved.svg';
+
+type TicketProps = {
+  isMobile?: boolean;
+};
 
 export const Main = styled.main`
   background-position: 50%;
@@ -294,18 +300,20 @@ export const TicketArea = styled.div`
   flex-direction: column;
 `;
 
-export const Ticket = styled.div`
-  display: flex;
+export const Ticket = styled.div<TicketProps>`
+  /* display: flex; */
   align-items: center;
   justify-content: center;
 
   position: relative;
 
   @media (min-width: 320px) {
-    display: none;
+    display: ${({ isMobile }) => (isMobile ? 'flex' : 'none')};
 
     width: 272px;
     height: 125px;
+
+    margin-top: 32px;
   }
 
   @media (min-width: 375px) {
@@ -314,12 +322,10 @@ export const Ticket = styled.div`
   }
 
   @media (min-width: 768px) {
-    display: flex;
+    display: ${({ isMobile }) => (isMobile ? 'none' : 'flex')};
 
     width: unset;
     height: unset;
-
-    margin-top: 32px;
   }
 
   @media (min-width: 1200px) {
@@ -328,6 +334,8 @@ export const Ticket = styled.div`
 `;
 
 export const TicketBackgroundIcon = styled(TicketBackgroundSVG)``;
+
+export const TicketBackgroundMobileIcon = styled(TicketBackgroundMobileSVG)``;
 
 export const TicketDoWhileIcon = styled(TicketDoWhileSVG)`
   position: absolute;
@@ -351,6 +359,23 @@ export const TicketDoWhileIcon = styled(TicketDoWhileSVG)`
 
     width: unset;
     height: unset;
+  }
+`;
+
+export const TicketDoWhileMobileIcon = styled(TicketDoWhileMobileSVG)`
+  position: absolute;
+
+  @media (min-width: 320px) {
+    top: 24px;
+    left: 24px;
+
+    width: 85px;
+    height: auto;
+  }
+
+  @media (min-width: 375px) {
+    top: 32px;
+    left: 32px;
   }
 `;
 
@@ -472,6 +497,11 @@ export const TicketGithubIcon = styled(TicketGithubSVG)`
   height: 18px;
 
   color: var(--support);
+
+  @media (min-width: 320px) {
+    width: 12px;
+    height: 12px;
+  }
 `;
 
 export const TicketGithubUsername = styled.span`
