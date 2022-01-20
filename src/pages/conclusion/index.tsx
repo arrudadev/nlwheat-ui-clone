@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import {
   ArrowRightIcon,
   Container,
@@ -10,6 +12,7 @@ import {
   InviteLinkButton,
   InviteLinkButtonContent,
   InviteLinkButtonCopyIcon,
+  InviteLinkButtonCopyMobileIcon,
   JoinInCommunityLink,
   KnowMoreAboutDoWhileLink,
   Main,
@@ -27,7 +30,9 @@ import {
   SubTitle,
   Ticket,
   TicketArea,
+  TicketBackgroundConnectedIcon,
   TicketBackgroundIcon,
+  TicketBackgroundMobileConnectedIcon,
   TicketBackgroundMobileIcon,
   TicketDate,
   TicketDoWhileIcon,
@@ -36,6 +41,7 @@ import {
   TicketGithubUsername,
   TicketPersonGithub,
   TicketPersonIcon,
+  TicketPersonImage,
   TicketPersonInfo,
   TicketPersonName,
   TicketProfile,
@@ -46,6 +52,21 @@ import {
 } from '../../styles/pages/conclusion';
 
 export default function Conclusion() {
+  const [isAlreadyCustomTicketWithGithub, setIsAlreadyCustomTicketWithGithub] =
+    useState(false);
+
+  const [name, setName] = useState('Seu nome');
+  const [username, setUsername] = useState('username');
+  const [imageUrl, setImageUrl] = useState('');
+
+  function handleCustomizeYourTicketWithGithub() {
+    setName('Alexandre Monteiro');
+    setUsername('arrudadev');
+    setImageUrl('https://github.com/arrudadev.png');
+
+    setIsAlreadyCustomTicketWithGithub(true);
+  }
+
   return (
     <>
       <Main>
@@ -63,7 +84,13 @@ export default function Conclusion() {
               <Title>Conclua sua inscrição</Title>
 
               <Ticket isMobile>
-                <TicketBackgroundMobileIcon />
+                {!isAlreadyCustomTicketWithGithub && (
+                  <TicketBackgroundMobileIcon />
+                )}
+
+                {isAlreadyCustomTicketWithGithub && (
+                  <TicketBackgroundMobileConnectedIcon />
+                )}
 
                 <TicketDoWhileMobileIcon />
 
@@ -72,59 +99,91 @@ export default function Conclusion() {
                 </TicketDate>
 
                 <TicketProfile>
-                  <TicketPersonIcon />
+                  {!isAlreadyCustomTicketWithGithub && <TicketPersonIcon />}
+
+                  {isAlreadyCustomTicketWithGithub && (
+                    <TicketPersonImage src={imageUrl} alt={name} />
+                  )}
 
                   <TicketPersonInfo>
-                    <TicketPersonName>Seu nome</TicketPersonName>
+                    <TicketPersonName>{name}</TicketPersonName>
 
                     <TicketPersonGithub>
-                      <TicketGithubIcon />
+                      <TicketGithubIcon
+                        isAlreadyCustomTicketWithGithub={
+                          isAlreadyCustomTicketWithGithub
+                        }
+                      />
 
-                      <TicketGithubUsername>Username</TicketGithubUsername>
+                      <TicketGithubUsername
+                        isAlreadyCustomTicketWithGithub={
+                          isAlreadyCustomTicketWithGithub
+                        }
+                      >
+                        {username}
+                      </TicketGithubUsername>
                     </TicketPersonGithub>
                   </TicketPersonInfo>
                 </TicketProfile>
               </Ticket>
 
-              <InviteLinkButton isMobile>
-                <InviteLinkButtonCopyIcon />
+              {isAlreadyCustomTicketWithGithub && (
+                <>
+                  <InviteLinkButton isMobile>
+                    <InviteLinkButtonCopyMobileIcon />
 
-                <InviteLinkButtonContent>
-                  <strong>Convide seus amigos com a sua URL:</strong>
+                    <InviteLinkButtonContent>
+                      <strong>Convide seus amigos com a sua URL:</strong>
 
-                  <span>https://nextlevelweek.com/convite/username/7</span>
-                </InviteLinkButtonContent>
-              </InviteLinkButton>
+                      <span>
+                        https://nextlevelweek.com/convite/{username}/7
+                      </span>
+                    </InviteLinkButtonContent>
+                  </InviteLinkButton>
 
-              <ShareYourTicket isMobile>
-                <span>Compartilhe seu Ticket:</span>
+                  <ShareYourTicket isMobile>
+                    <span>Compartilhe seu Ticket:</span>
 
-                <OptionsToShareList>
-                  <OptionToShare>
-                    <ShareLinkButton>
-                      <ShareLinkImg src="/icons/whatsapp.png" alt="Whatsapp" />
-                    </ShareLinkButton>
-                  </OptionToShare>
+                    <OptionsToShareList>
+                      <OptionToShare>
+                        <ShareLinkButton>
+                          <ShareLinkImg
+                            src="/icons/whatsapp.png"
+                            alt="Whatsapp"
+                          />
+                        </ShareLinkButton>
+                      </OptionToShare>
 
-                  <OptionToShare>
-                    <ShareLinkButton>
-                      <ShareLinkImg src="/icons/linkedin.png" alt="Linkedin" />
-                    </ShareLinkButton>
-                  </OptionToShare>
+                      <OptionToShare>
+                        <ShareLinkButton>
+                          <ShareLinkImg
+                            src="/icons/linkedin.png"
+                            alt="Linkedin"
+                          />
+                        </ShareLinkButton>
+                      </OptionToShare>
 
-                  <OptionToShare>
-                    <ShareLinkButton>
-                      <ShareLinkImg src="/icons/facebook.png" alt="Facebook" />
-                    </ShareLinkButton>
-                  </OptionToShare>
+                      <OptionToShare>
+                        <ShareLinkButton>
+                          <ShareLinkImg
+                            src="/icons/facebook.png"
+                            alt="Facebook"
+                          />
+                        </ShareLinkButton>
+                      </OptionToShare>
 
-                  <OptionToShare>
-                    <ShareLinkButton>
-                      <ShareLinkImg src="/icons/twitter.png" alt="Twitter" />
-                    </ShareLinkButton>
-                  </OptionToShare>
-                </OptionsToShareList>
-              </ShareYourTicket>
+                      <OptionToShare>
+                        <ShareLinkButton>
+                          <ShareLinkImg
+                            src="/icons/twitter.png"
+                            alt="Twitter"
+                          />
+                        </ShareLinkButton>
+                      </OptionToShare>
+                    </OptionsToShareList>
+                  </ShareYourTicket>
+                </>
+              )}
 
               <SubTitle>
                 <strong>Importante:</strong> Siga os passos abaixo para estar
@@ -132,29 +191,35 @@ export default function Conclusion() {
               </SubTitle>
 
               <Steps>
-                <CustomizeYourTicketWithGithubButton>
-                  <StepNumber>01</StepNumber>
+                {!isAlreadyCustomTicketWithGithub && (
+                  <CustomizeYourTicketWithGithubButton
+                    onClick={handleCustomizeYourTicketWithGithub}
+                  >
+                    <StepNumber>01</StepNumber>
 
-                  <CustomizeTicketGithubIcon />
+                    <CustomizeTicketGithubIcon />
 
-                  <span>
-                    Personalize o ticket <br /> com seu GitHub
-                  </span>
+                    <span>
+                      Personalize o ticket <br /> com seu GitHub
+                    </span>
 
-                  <ArrowRightIcon />
-                </CustomizeYourTicketWithGithubButton>
+                    <ArrowRightIcon />
+                  </CustomizeYourTicketWithGithubButton>
+                )}
 
-                {/* <CustomTicketSuccessfullyWithGithubButton>
-                <StepNumber>01</StepNumber>
+                {isAlreadyCustomTicketWithGithub && (
+                  <CustomTicketSuccessfullyWithGithubButton>
+                    <StepNumber>01</StepNumber>
 
-                <CustomTicketGithubSuccessfullyIcon />
+                    <CustomTicketGithubSuccessfullyIcon />
 
-                <span>
-                  Ticket personalizado <br /> <strong>com sucesso</strong>
-                </span>
+                    <span>
+                      Ticket personalizado <br /> <strong>com sucesso</strong>
+                    </span>
 
-                <ArrowRightIcon />
-              </CustomTicketSuccessfullyWithGithubButton> */}
+                    <ArrowRightIcon />
+                  </CustomTicketSuccessfullyWithGithubButton>
+                )}
 
                 <JoinInCommunityLink>
                   <StepNumber>02</StepNumber>
@@ -184,7 +249,11 @@ export default function Conclusion() {
 
             <TicketArea>
               <Ticket>
-                <TicketBackgroundIcon />
+                {!isAlreadyCustomTicketWithGithub && <TicketBackgroundIcon />}
+
+                {isAlreadyCustomTicketWithGithub && (
+                  <TicketBackgroundConnectedIcon />
+                )}
 
                 <TicketDoWhileIcon />
 
@@ -193,59 +262,91 @@ export default function Conclusion() {
                 </TicketDate>
 
                 <TicketProfile>
-                  <TicketPersonIcon />
+                  {!isAlreadyCustomTicketWithGithub && <TicketPersonIcon />}
+
+                  {isAlreadyCustomTicketWithGithub && (
+                    <TicketPersonImage src={imageUrl} alt={name} />
+                  )}
 
                   <TicketPersonInfo>
-                    <TicketPersonName>Seu nome</TicketPersonName>
+                    <TicketPersonName>{name}</TicketPersonName>
 
                     <TicketPersonGithub>
-                      <TicketGithubIcon />
+                      <TicketGithubIcon
+                        isAlreadyCustomTicketWithGithub={
+                          isAlreadyCustomTicketWithGithub
+                        }
+                      />
 
-                      <TicketGithubUsername>Username</TicketGithubUsername>
+                      <TicketGithubUsername
+                        isAlreadyCustomTicketWithGithub={
+                          isAlreadyCustomTicketWithGithub
+                        }
+                      >
+                        {username}
+                      </TicketGithubUsername>
                     </TicketPersonGithub>
                   </TicketPersonInfo>
                 </TicketProfile>
               </Ticket>
 
-              <InviteLinkButton>
-                <InviteLinkButtonCopyIcon />
+              {isAlreadyCustomTicketWithGithub && (
+                <>
+                  <InviteLinkButton>
+                    <InviteLinkButtonCopyIcon />
 
-                <InviteLinkButtonContent>
-                  <strong>Convide seus amigos com a sua URL:</strong>
+                    <InviteLinkButtonContent>
+                      <strong>Convide seus amigos com a sua URL:</strong>
 
-                  <span>https://nextlevelweek.com/convite/username/7</span>
-                </InviteLinkButtonContent>
-              </InviteLinkButton>
+                      <span>
+                        https://nextlevelweek.com/convite/{username}/7
+                      </span>
+                    </InviteLinkButtonContent>
+                  </InviteLinkButton>
 
-              <ShareYourTicket>
-                <span>Compartilhe seu Ticket:</span>
+                  <ShareYourTicket>
+                    <span>Compartilhe seu Ticket:</span>
 
-                <OptionsToShareList>
-                  <OptionToShare>
-                    <ShareLinkButton>
-                      <ShareLinkImg src="/icons/whatsapp.png" alt="Whatsapp" />
-                    </ShareLinkButton>
-                  </OptionToShare>
+                    <OptionsToShareList>
+                      <OptionToShare>
+                        <ShareLinkButton>
+                          <ShareLinkImg
+                            src="/icons/whatsapp.png"
+                            alt="Whatsapp"
+                          />
+                        </ShareLinkButton>
+                      </OptionToShare>
 
-                  <OptionToShare>
-                    <ShareLinkButton>
-                      <ShareLinkImg src="/icons/linkedin.png" alt="Linkedin" />
-                    </ShareLinkButton>
-                  </OptionToShare>
+                      <OptionToShare>
+                        <ShareLinkButton>
+                          <ShareLinkImg
+                            src="/icons/linkedin.png"
+                            alt="Linkedin"
+                          />
+                        </ShareLinkButton>
+                      </OptionToShare>
 
-                  <OptionToShare>
-                    <ShareLinkButton>
-                      <ShareLinkImg src="/icons/facebook.png" alt="Facebook" />
-                    </ShareLinkButton>
-                  </OptionToShare>
+                      <OptionToShare>
+                        <ShareLinkButton>
+                          <ShareLinkImg
+                            src="/icons/facebook.png"
+                            alt="Facebook"
+                          />
+                        </ShareLinkButton>
+                      </OptionToShare>
 
-                  <OptionToShare>
-                    <ShareLinkButton>
-                      <ShareLinkImg src="/icons/twitter.png" alt="Twitter" />
-                    </ShareLinkButton>
-                  </OptionToShare>
-                </OptionsToShareList>
-              </ShareYourTicket>
+                      <OptionToShare>
+                        <ShareLinkButton>
+                          <ShareLinkImg
+                            src="/icons/twitter.png"
+                            alt="Twitter"
+                          />
+                        </ShareLinkButton>
+                      </OptionToShare>
+                    </OptionsToShareList>
+                  </ShareYourTicket>
+                </>
+              )}
             </TicketArea>
           </Container>
         </Section>

@@ -1,0 +1,15 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="48" height="48" fill="url(#copyMobile0_linear)" fill-opacity="0.2"></rect>
+  <path d="M19 27H17C15.895 27 15 26.105 15 25V17C15 15.895 15.895 15 17 15H25C26.105 15 27 15.895 27 17V19"
+    stroke="#E1E1E6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M25 31H21C19.895 31 19 30.105 19 29V21C19 19.895 19.895 19 21 19H29C30.105 19 31 19.895 31 21V25"
+    stroke="#E1E1E6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M31 29V33" stroke="#FFCD1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M29 31H33" stroke="#FFCD1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <defs>
+    <linearGradient id="copyMobile0_linear" x1="-1.01224e-06" y1="24" x2="48" y2="24" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF008E"></stop>
+      <stop offset="1" stop-color="#8257E5"></stop>
+    </linearGradient>
+  </defs>
+</svg>

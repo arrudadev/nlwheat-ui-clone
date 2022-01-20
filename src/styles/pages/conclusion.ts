@@ -1,11 +1,14 @@
 import styled, { css } from 'styled-components';
 
 import ArrowRightSVG from '../../assets/icons/arrow-right.svg';
+import InviteLinkButtonCopyMobileSVG from '../../assets/icons/copy-mobile.svg';
 import InviteLinkButtonCopySVG from '../../assets/icons/copy.svg';
 import CustomTicketGithubSuccessfullySVG from '../../assets/icons/custom-ticket-github-successfully.svg';
 import CustomizeTicketGithubSVG from '../../assets/icons/customize-ticket-github.svg';
 import DiscordSVG from '../../assets/icons/discord.svg';
 import StepDoWhileSVG from '../../assets/icons/step-do-while.svg';
+import TicketBackgroundConnectedSVG from '../../assets/icons/ticket-background-connected.svg';
+import TicketBackgroundMobileConnectedSVG from '../../assets/icons/ticket-background-mobile-connected.svg';
 import TicketBackgroundMobileSVG from '../../assets/icons/ticket-background-mobile.svg';
 import TicketBackgroundSVG from '../../assets/icons/ticket-background.svg';
 import TicketDoWhileMobileSVG from '../../assets/icons/ticket-do-while-mobile.svg';
@@ -24,6 +27,14 @@ type InviteLinkButtonProps = {
 
 type ShareYourTicketProps = {
   isMobile?: boolean;
+};
+
+type TicketGithubIconProps = {
+  isAlreadyCustomTicketWithGithub: boolean;
+};
+
+type TicketGithubUsernameProps = {
+  isAlreadyCustomTicketWithGithub: boolean;
 };
 
 export const Main = styled.main`
@@ -343,7 +354,15 @@ export const Ticket = styled.div<TicketProps>`
 
 export const TicketBackgroundIcon = styled(TicketBackgroundSVG)``;
 
+export const TicketBackgroundConnectedIcon = styled(
+  TicketBackgroundConnectedSVG,
+)``;
+
 export const TicketBackgroundMobileIcon = styled(TicketBackgroundMobileSVG)``;
+
+export const TicketBackgroundMobileConnectedIcon = styled(
+  TicketBackgroundMobileConnectedSVG,
+)``;
 
 export const TicketDoWhileIcon = styled(TicketDoWhileSVG)`
   position: absolute;
@@ -452,6 +471,20 @@ export const TicketPersonIcon = styled(TicketPersonSVG)`
   }
 `;
 
+export const TicketPersonImage = styled.img`
+  border-radius: 50%;
+
+  @media (min-width: 320px) {
+    width: 40px;
+    height: 40px;
+  }
+
+  @media (min-width: 768px) {
+    width: 72px;
+    height: 72px;
+  }
+`;
+
 export const TicketPersonInfo = styled.div`
   overflow: hidden;
 
@@ -500,20 +533,17 @@ export const TicketPersonGithub = styled.div`
   }
 `;
 
-export const TicketGithubIcon = styled(TicketGithubSVG)`
+export const TicketGithubIcon = styled(TicketGithubSVG)<TicketGithubIconProps>`
   width: 18px;
   height: 18px;
 
-  color: var(--support);
-
-  @media (min-width: 320px) {
-    width: 12px;
-    height: 12px;
-  }
+  color: ${({ isAlreadyCustomTicketWithGithub }) =>
+    isAlreadyCustomTicketWithGithub ? 'var(--yellow)' : 'var(--support)'};
 `;
 
-export const TicketGithubUsername = styled.span`
-  color: var(--text);
+export const TicketGithubUsername = styled.span<TicketGithubUsernameProps>`
+  color: ${({ isAlreadyCustomTicketWithGithub }) =>
+    isAlreadyCustomTicketWithGithub ? 'var(--yellow)' : 'var(--support)'};
 
   margin-left: 8px;
 
@@ -587,6 +617,10 @@ export const InviteLinkButton = styled.button<InviteLinkButtonProps>`
 
 export const InviteLinkButtonCopyIcon = styled(InviteLinkButtonCopySVG)``;
 
+export const InviteLinkButtonCopyMobileIcon = styled(
+  InviteLinkButtonCopyMobileSVG,
+)``;
+
 export const InviteLinkButtonContent = styled.div`
   display: flex;
   align-items: center;
@@ -598,6 +632,13 @@ export const InviteLinkButtonContent = styled.div`
     align-items: flex-start;
 
     text-align: left;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+
+    text-align: center;
   }
 
   strong {
