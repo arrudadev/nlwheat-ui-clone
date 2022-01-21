@@ -1,4 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+import Binary01SVG from '../../assets/icons/binary01.svg';
+import Binary02SVG from '../../assets/icons/binary02.svg';
+import Binary03SVG from '../../assets/icons/binary03.svg';
+import CalendarSVG from '../../assets/icons/calendar.svg';
+import LogoSVG from '../../assets/icons/logo.svg';
+import OnlineSVG from '../../assets/icons/online.svg';
 
 export const Section = styled.section`
   display: flex;
@@ -62,7 +69,7 @@ export const Content = styled.div`
   }
 `;
 
-export const Logo = styled.img`
+export const Logo = styled(LogoSVG)`
   @media (min-width: 320px) {
     width: 256px;
     height: auto;
@@ -159,7 +166,7 @@ export const Detail = styled.div`
   align-items: center;
 `;
 
-export const DetailIcon = styled.img`
+const detailIconCSS = css`
   @media (min-width: 320px) {
     width: 48px;
     height: 48px;
@@ -169,6 +176,14 @@ export const DetailIcon = styled.img`
     width: unset;
     height: unset;
   }
+`;
+
+export const CalendarIcon = styled(CalendarSVG)`
+  ${detailIconCSS}
+`;
+
+export const OnlineIcon = styled(OnlineSVG)`
+  ${detailIconCSS}
 `;
 
 export const DetailText = styled.span`
@@ -223,7 +238,7 @@ export const Subscription = styled.div`
   }
 `;
 
-export const BinaryIcon01 = styled.img`
+export const BinaryIcon01Icon = styled(Binary01SVG)`
   position: absolute;
   top: 95px;
   left: -49px;
@@ -237,7 +252,7 @@ export const BinaryIcon01 = styled.img`
   }
 `;
 
-export const BinaryIcon02 = styled.img`
+export const BinaryIcon02Icon = styled(Binary02SVG)`
   position: absolute;
   top: -109px;
   right: -33px;
@@ -251,7 +266,7 @@ export const BinaryIcon02 = styled.img`
   }
 `;
 
-export const BinaryIcon03 = styled.img`
+export const BinaryIcon03Icon = styled(Binary03SVG)`
   position: absolute;
   bottom: 38px;
   right: -16px;

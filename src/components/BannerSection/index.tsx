@@ -1,17 +1,18 @@
 import { Divider } from '../Divider';
 import { SubscriptionForm } from '../SubscriptionForm';
 import {
-  BinaryIcon01,
-  BinaryIcon02,
-  BinaryIcon03,
+  BinaryIcon01Icon,
+  BinaryIcon02Icon,
+  BinaryIcon03Icon,
+  CalendarIcon,
   Container,
   Content,
   Detail,
-  DetailIcon,
   Details,
   DetailText,
   Edition,
   Logo,
+  OnlineIcon,
   Section,
   Subscription,
   SubTitle,
@@ -23,7 +24,7 @@ export function BannerSection() {
     <Section>
       <Container>
         <Content>
-          <Logo src="/logo.svg" />
+          <Logo />
 
           <Edition>
             Edição especial <span>|</span> Conteúdo inédito
@@ -40,7 +41,7 @@ export function BannerSection() {
 
           <Details>
             <Detail>
-              <DetailIcon src="/icons/home/calendar.svg" />
+              <CalendarIcon />
 
               <DetailText>
                 18 a 24 <br />
@@ -49,7 +50,7 @@ export function BannerSection() {
             </Detail>
 
             <Detail>
-              <DetailIcon src="/icons/home/computer.svg" />
+              <OnlineIcon />
 
               <DetailText>
                 Online <br /> e gratuito
@@ -61,11 +62,11 @@ export function BannerSection() {
         <Subscription>
           <SubscriptionForm />
 
-          <BinaryIcon01 src="/icons/home/binary01.svg" />
+          <BinaryIcon01Icon />
 
-          <BinaryIcon02 src="/icons/home/binary02.svg" />
+          <BinaryIcon02Icon />
 
-          <BinaryIcon03 src="/icons/home/binary03.svg" />
+          <BinaryIcon03Icon />
         </Subscription>
       </Container>
 
