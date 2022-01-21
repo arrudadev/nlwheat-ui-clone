@@ -1,22 +1,16 @@
 import { Divider } from '../Divider';
+import { SubscriptionEventDescription } from '../SubscriptionEventDescription';
 import { SubscriptionForm } from '../SubscriptionForm';
 import {
   BinaryIcon01Icon,
   BinaryIcon02Icon,
   BinaryIcon03Icon,
-  CalendarIcon,
   Container,
   Content,
-  Detail,
-  Details,
-  DetailText,
   Edition,
   Logo,
-  OnlineIcon,
   Section,
   Subscription,
-  SubTitle,
-  Title,
 } from './styles';
 
 export function BannerSection() {
@@ -30,33 +24,11 @@ export function BannerSection() {
             Edição especial <span>|</span> Conteúdo inédito
           </Edition>
 
-          <Title>
-            Sua carreira em programação no próximo nível e em menos tempo
-          </Title>
-
-          <SubTitle>
-            Evento online, gratuito e prático para você levar suas habilidades
-            em programação para o próximo nível.
-          </SubTitle>
-
-          <Details>
-            <Detail>
-              <CalendarIcon />
-
-              <DetailText>
-                18 a 24 <br />
-                de outubro
-              </DetailText>
-            </Detail>
-
-            <Detail>
-              <OnlineIcon />
-
-              <DetailText>
-                Online <br /> e gratuito
-              </DetailText>
-            </Detail>
-          </Details>
+          <SubscriptionEventDescription
+            title="Sua carreira em programação no próximo nível e em menos tempo"
+            subtitle=" Evento online, gratuito e prático para você levar suas habilidades
+            em programação para o próximo nível."
+          />
         </Content>
 
         <Subscription>
