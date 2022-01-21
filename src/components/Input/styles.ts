@@ -1,3 +1,5 @@
+import { FiUser } from 'react-icons/fi';
+
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -24,10 +26,14 @@ export const Container = styled.div`
   }
 `;
 
-export const Icon = styled.img`
-  width: 24px;
-  height: 24px;
-  color: #633f5f;
+export const Icon = styled.div`
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
 `;
 
 export const Label = styled.label`

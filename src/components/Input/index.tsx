@@ -1,14 +1,16 @@
+import { ReactNode } from 'react';
+
 import { Container, Icon, Label, StyledInput } from './styles';
 
 type InputProps = {
-  icon: string;
+  icon: ReactNode;
   label: string;
 };
 
 export function Input({ icon, label }: InputProps) {
   return (
     <Container>
-      <Icon src={`/icons/inputs/${icon}`} />
+      <Icon>{icon}</Icon>
 
       <Label>{label}</Label>
 

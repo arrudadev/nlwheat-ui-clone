@@ -1,3 +1,6 @@
+import { HiOutlineMail } from 'react-icons/hi';
+import { RiUser3Line } from 'react-icons/ri';
+
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
 import { Input } from '../Input';
@@ -17,9 +20,12 @@ export function SubscriptionForm() {
       <Title>Inscrição gratuita</Title>
 
       <Form>
-        <Input icon="person.svg" label="Nome completo" />
+        <Input icon={<RiUser3Line color="#633f5f" />} label="Nome completo" />
 
-        <Input icon="calendar.svg" label="E-mail principal" />
+        <Input
+          icon={<HiOutlineMail color="#633f5f" />}
+          label="E-mail principal"
+        />
       </Form>
 
       <CheckboxWrapper>
