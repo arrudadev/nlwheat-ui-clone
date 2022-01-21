@@ -101,7 +101,7 @@ export const Footer = styled.div`
 
   margin-top: 24px;
 
-  img {
+  svg {
     @media (min-width: 320px) {
       margin-right: 8px;
     }

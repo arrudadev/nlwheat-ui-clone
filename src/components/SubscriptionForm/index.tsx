@@ -1,6 +1,7 @@
 import { HiOutlineMail } from 'react-icons/hi';
 import { RiUser3Line } from 'react-icons/ri';
 
+import SecurityIcon from '../../assets/icons/security.svg';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
 import { Input } from '../Input';
@@ -54,7 +55,7 @@ export function SubscriptionForm() {
       <Divider />
 
       <Footer>
-        <img src="/icons/home/security.svg" alt="Segurança" />
+        <SecurityIcon />
 
         <span>Suas informações estão seguras e livres de SPAM</span>
       </Footer>
