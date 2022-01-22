@@ -1,8 +1,14 @@
-import { FiUser } from 'react-icons/fi';
-
 import styled from 'styled-components';
 
-export const Container = styled.div`
+type ContainerProps = {
+  isFocused: boolean;
+};
+
+type IconProps = {
+  isFocused: boolean;
+};
+
+export const Container = styled.div<ContainerProps>`
   display: flex;
   align-items: center;
 
@@ -11,7 +17,8 @@ export const Container = styled.div`
   height: 64px;
   width: 100%;
 
-  border: 1px solid transparent;
+  border: 1px solid
+    ${({ isFocused }) => (isFocused ? 'var(--white)' : 'transparent')};
   border-radius: 5px;
   background: #13080d;
 
@@ -26,13 +33,15 @@ export const Container = styled.div`
   }
 `;
 
-export const Icon = styled.div`
+export const Icon = styled.div<IconProps>`
   display: flex;
   align-items: center;
 
   svg {
     width: 22px;
     height: 22px;
+
+    color: ${({ isFocused }) => (isFocused ? 'var(--white)' : '#633f5f')};
   }
 `;
 

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 
 import { Container, Icon, Label, StyledInput } from './styles';
 
@@ -8,13 +8,27 @@ type InputProps = {
 };
 
 export function Input({ icon, label }: InputProps) {
+  const [isInputFocused, setIsInputFocused] = useState(false);
+
+  function handleInputFocus() {
+    setIsInputFocused(true);
+  }
+
+  function handleInputBlur() {
+    setIsInputFocused(false);
+  }
+
   return (
-    <Container>
-      <Icon>{icon}</Icon>
+    <Container isFocused={isInputFocused}>
+      <Icon isFocused={isInputFocused}>{icon}</Icon>
 
       <Label>{label}</Label>
 
-      <StyledInput placeholder={label} />
+      <StyledInput
+        placeholder={label}
+        onFocus={handleInputFocus}
+        onBlur={handleInputBlur}
+      />
     </Container>
   );
 }

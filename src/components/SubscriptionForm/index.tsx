@@ -21,12 +21,9 @@ export function SubscriptionForm() {
       <Title>Inscrição gratuita</Title>
 
       <Form>
-        <Input icon={<RiUser3Line color="#633f5f" />} label="Nome completo" />
+        <Input icon={<RiUser3Line />} label="Nome completo" />
 
-        <Input
-          icon={<HiOutlineMail color="#633f5f" />}
-          label="E-mail principal"
-        />
+        <Input icon={<HiOutlineMail />} label="E-mail principal" />
       </Form>
 
       <CheckboxWrapper>
