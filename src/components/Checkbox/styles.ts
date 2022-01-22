@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+type LabelProps = {
+  isChecked: boolean;
+};
+
 export const Container = styled.div`
   display: flex;
   align-items: center;
@@ -20,7 +24,7 @@ export const Input = styled.input`
   opacity: 0;
 `;
 
-export const Label = styled.label`
+export const Label = styled.label<LabelProps>`
   position: relative;
   padding: 0;
 
@@ -40,21 +44,28 @@ export const Label = styled.label`
     width: 20px;
     height: 20px;
     border-radius: 5px;
-    background: var(--primary);
+    background: ${({ isChecked }) =>
+      isChecked ? 'var(--primary)' : 'var(--background)'};
     border: 2px solid var(--primary);
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    left: 5px;
-    top: 10px;
-    width: 2px;
-    height: 2px;
-    background: var(--white);
-    box-shadow: 2px 0 0 var(--white), 4px 0 0 var(--white),
-      4px -2px 0 var(--white), 4px -4px 0 var(--white), 4px -6px 0 var(--white),
-      4px -8px 0 var(--white);
-    transform: rotate(45deg);
-  }
+  ${({ isChecked }) =>
+    isChecked &&
+    `&::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 10px;
+
+      width: 2px;
+      height: 2px;
+
+      background: var(--white);
+
+      box-shadow: 2px 0 0 var(--white), 4px 0 0 var(--white),
+        4px -2px 0 var(--white), 4px -4px 0 var(--white), 4px -6px 0 var(--white),
+        4px -8px 0 var(--white);
+
+      transform: rotate(45deg);
+  }`}
 `;

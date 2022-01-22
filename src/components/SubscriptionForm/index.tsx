@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { HiOutlineMail } from 'react-icons/hi';
 import { RiUser3Line } from 'react-icons/ri';
 
@@ -16,6 +17,9 @@ import {
 } from './styles';
 
 export function SubscriptionForm() {
+  const [participateInTheDoWhile, setParticipateInTheDoWhile] = useState(true);
+  const [receiveCommunications, setReceiveCommunications] = useState(true);
+
   return (
     <>
       <Title>Inscrição gratuita</Title>
@@ -36,11 +40,17 @@ export function SubscriptionForm() {
               </>
             }
             value="doWhile"
+            checked={participateInTheDoWhile}
+            onChange={() =>
+              setParticipateInTheDoWhile(!participateInTheDoWhile)
+            }
           />
 
           <Checkbox
             text={<>Concordo em receber comunicações.</>}
             value="marketing"
+            checked={receiveCommunications}
+            onChange={() => setReceiveCommunications(!receiveCommunications)}
           />
         </CheckboxContainer>
 
