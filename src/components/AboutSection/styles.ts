@@ -10,7 +10,7 @@ export const Section = styled.section`
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('/images/home/astronauts-shaking-hands.png');
+  background-image: url('/images/backgrounds/astronauts-shaking-hands.png');
 
   @media (min-width: 320px) {
     padding: 80px 0;
