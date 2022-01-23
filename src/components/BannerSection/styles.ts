@@ -14,7 +14,7 @@ export const Section = styled.section`
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('/images/home/banner-background.png');
+  background-image: url('/images/backgrounds/banner-background.png');
 
   overflow: hidden;
 
