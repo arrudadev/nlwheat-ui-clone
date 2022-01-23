@@ -10,7 +10,7 @@ export const Section = styled.section`
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('/images/testimonials-bg.png');
+  background-image: url('/images/backgrounds/testimonials-bg.png');
 
   @media (min-width: 320px) {
     padding: 80px 0px;
