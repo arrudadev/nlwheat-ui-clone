@@ -41,7 +41,7 @@ export const Main = styled.main`
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url('/images/conclusion/conclusion-bg.png');
+  background-image: url('/images/backgrounds/conclusion-bg.png');
 
   min-height: calc(100vh - 56px);
 `;
