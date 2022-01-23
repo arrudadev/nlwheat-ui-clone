@@ -29,7 +29,7 @@ export const Main = styled.main`
 
   background-position: top;
   background-repeat: no-repeat;
-  background-image: url('/images/trails/background-heat.png');
+  background-image: url('/images/backgrounds/background-heat.png');
 
   @media (min-width: 320px) {
     background-size: cover;
