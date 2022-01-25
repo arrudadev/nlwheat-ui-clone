@@ -3,13 +3,12 @@ import { useState } from 'react';
 import PlayVideoIcon from '../../assets/icons/play-video.svg';
 import { Divider } from '../Divider';
 import { EditionButton } from '../EditionButton';
+import { EditionButtonMobile } from '../EditionButtonMobile';
 import {
-  ButtonMobile,
-  Buttons,
-  ButtonsMobile,
-  ButtonWrapperMobile,
   Container,
   Content,
+  EditionsButtons,
+  EditionsButtonsMobile,
   Header,
   Paragraph,
   PlayVideoButton,
@@ -45,7 +44,7 @@ export function EditionsSection() {
         </Header>
 
         <Content>
-          <Buttons>
+          <EditionsButtons>
             <EditionButton
               edition="1"
               isActive={isActive('1')}
@@ -81,45 +80,45 @@ export function EditionsSection() {
               isActive={isActive('6')}
               onClick={() => handleSelectEdition('6')}
             />
-          </Buttons>
+          </EditionsButtons>
 
-          <ButtonsMobile>
-            <ButtonWrapperMobile className={isActive('1') ? 'active' : ''}>
-              <ButtonMobile onClick={() => handleSelectEdition('1')}>
-                <strong>#01</strong>
-              </ButtonMobile>
-            </ButtonWrapperMobile>
+          <EditionsButtonsMobile>
+            <EditionButtonMobile
+              edition="1"
+              isActive={isActive('1')}
+              onClick={() => handleSelectEdition('1')}
+            />
 
-            <ButtonWrapperMobile className={isActive('2') ? 'active' : ''}>
-              <ButtonMobile onClick={() => handleSelectEdition('2')}>
-                <strong>#02</strong>
-              </ButtonMobile>
-            </ButtonWrapperMobile>
+            <EditionButtonMobile
+              edition="2"
+              isActive={isActive('2')}
+              onClick={() => handleSelectEdition('2')}
+            />
 
-            <ButtonWrapperMobile className={isActive('3') ? 'active' : ''}>
-              <ButtonMobile onClick={() => handleSelectEdition('3')}>
-                <strong>#03</strong>
-              </ButtonMobile>
-            </ButtonWrapperMobile>
+            <EditionButtonMobile
+              edition="3"
+              isActive={isActive('3')}
+              onClick={() => handleSelectEdition('3')}
+            />
 
-            <ButtonWrapperMobile className={isActive('4') ? 'active' : ''}>
-              <ButtonMobile onClick={() => handleSelectEdition('4')}>
-                <strong>#04</strong>
-              </ButtonMobile>
-            </ButtonWrapperMobile>
+            <EditionButtonMobile
+              edition="4"
+              isActive={isActive('4')}
+              onClick={() => handleSelectEdition('4')}
+            />
 
-            <ButtonWrapperMobile className={isActive('5') ? 'active' : ''}>
-              <ButtonMobile onClick={() => handleSelectEdition('5')}>
-                <strong>#05</strong>
-              </ButtonMobile>
-            </ButtonWrapperMobile>
+            <EditionButtonMobile
+              edition="5"
+              isActive={isActive('5')}
+              onClick={() => handleSelectEdition('5')}
+            />
 
-            <ButtonWrapperMobile className={isActive('6') ? 'active' : ''}>
-              <ButtonMobile onClick={() => handleSelectEdition('6')}>
-                <strong>#06</strong>
-              </ButtonMobile>
-            </ButtonWrapperMobile>
-          </ButtonsMobile>
+            <EditionButtonMobile
+              edition="6"
+              isActive={isActive('6')}
+              onClick={() => handleSelectEdition('6')}
+            />
+          </EditionsButtonsMobile>
 
           <VideoWrapper>
             <PlayVideoButton>
