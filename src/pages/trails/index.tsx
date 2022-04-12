@@ -1,12 +1,9 @@
 import ExpanseTrailIcon from '../../assets/icons/expanse-trail.svg';
 import ImpulseTrailIcon from '../../assets/icons/impulse-trail.svg';
 import OriginTrailIcon from '../../assets/icons/origin-trail.svg';
+import { TrailsBanner } from '../../components/TrailsBanner';
 import {
   Container,
-  LogoIcon,
-  Main,
-  TrailsHeder,
-  TrailsHederHeadline,
   Title,
   TrailsBody,
   TrailsBodyHeadline,
@@ -22,18 +19,8 @@ import {
 
 export default function Trails() {
   return (
-    <Main>
-      <Container>
-        <TrailsHeder>
-          <TrailsHederHeadline>
-            <LogoIcon />
-
-            <Title>
-              Escolha a sua missão e <br /> conclua a sua inscrição
-            </Title>
-          </TrailsHederHeadline>
-        </TrailsHeder>
-      </Container>
+    <>
+      <TrailsBanner />
 
       <TrailsBody>
         <Container>
@@ -119,6 +106,6 @@ export default function Trails() {
           </TrailsList>
         </Container>
       </TrailsBody>
-    </Main>
+    </>
   );
 }
